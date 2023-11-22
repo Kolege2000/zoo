@@ -29,7 +29,6 @@ class zoo():
                 int(input('Größe des Tieres in cm eingeben:')),
                 float(input('Gewicht des Tieres in kg eingeben:')),
                 str(input('Ein Merkmal des Tieres eingeben:')))
-
             tier.add_characteristic()
             tier.set_characteristic_points()
             tier.insert_name()

@@ -1,5 +1,5 @@
 criteria_list_list          =   [
-            ['groß' and 'ohren', 'rüssel', 'gut' and 'gedächtnis', 'stoßzähne', 'flieg' or 'flug'],         #Elefant
+            [('groß' or 'riesig') and 'ohren', 'rüssel', 'gut' and 'gedächtnis', 'stoßzähne', 'flieg' or 'flug'],         #Elefant
             [('gut' and 'kleidet') or 'frack' or 'anzug', 'schenk' and 'kieselstein',
             ('brigade' or 'major') and 'general', 'schnabel', 'monogam'],                                   #Pinguin
             ['bärig', ('besitz' or 'gehör') and 'china', 'schwarz' and 'weiß', 'kung' and 'fu', 'bambus']]  #Pandabär
