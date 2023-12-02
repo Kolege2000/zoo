@@ -5,7 +5,7 @@ class Gehege:
 class Grosstiergehege(Gehege):
     def __init__(self, kapazitaet, name, standort, bedingung_mindestgroesse):
         super().__init__(kapazitaet=kapazitaet//2)
-        self.name       =   f'{name}Gehege'
+        self.name       =   f'{name}gehege'
         self.position   =   standort
         self.condition  =   bedingung_mindestgroesse
         self.animals    =   []

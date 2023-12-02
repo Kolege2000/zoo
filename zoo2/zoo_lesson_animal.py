@@ -72,4 +72,8 @@ class Animal:
         return average_size_weight[0] >= other.condition
 
     def __repr__(self):
-        return self.name + ' ' + self.stadium
+        if self.name is not None:
+            return self.name + ' ' + self.stadium
+        else:
+            return 'Unbenanntes Tier'
+

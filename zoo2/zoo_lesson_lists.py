@@ -4,9 +4,7 @@ criteria_list_list          =   [
             ('brigade' or 'major') and 'general', 'schnabel', 'monogam'],                                               #Pinguin
             ['bärig', ('besitz' or 'gehör') and 'china', 'schwarz' and 'weiß', 'kung' and 'fu', 'bambus'],              #Pandabär
             [('renn' or 'lauf') and'schnell' ,'intelligent', ('krass' or 'toll') and 'super',
-             'scharf' and 'zähne', 'raub' and 'tier']                                                                   #Raptor
-  ]
-
+             'scharf' and 'zähne', 'raub' and 'tier']]                                                                   #Raptor
 animal_list                 =   [
             'Elefant', 'Pinguin', 'Pandabär', 'Raptor']
 
