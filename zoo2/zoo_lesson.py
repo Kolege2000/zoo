@@ -8,13 +8,13 @@ class zoo():
         self.tier_idx           =   0
         self.anzahl_der_tiere   =   None
         self.gesamt_gehege      =   self.build_gehege()
-# ----------------------------------------------------------------------------------------------------------------------
+
     def build_gehege(self):
         '''errichtet Groß-, Mittel_ und Kleingehege in "zoo_lesson_gehege"'''
         gesamtgehege = Gehege(kapazitaet=1000)
-        gross_tiergehege    = Grosstiergehege(gesamtgehege.capacity, 'links', 140)
-        mittel_tiergehege   = Mitteltiergehege(gesamtgehege.capacity, 'geradeaus', 70)
-        klein_tiergehege    = Kleintiergehege(gesamtgehege.capacity, 'rechts')
+        gross_tiergehege    = Grosstiergehege(gesamtgehege.capacity, 'Großtier', 'links', 140)
+        mittel_tiergehege   = Mitteltiergehege(gesamtgehege.capacity, 'Mitteltier', 'geradeaus', 70)
+        klein_tiergehege    = Kleintiergehege(gesamtgehege.capacity, 'KleinTier', 'rechts', 0)
         return gross_tiergehege, mittel_tiergehege, klein_tiergehege
 # ----------------------------------------------------------------------------------------------------------------------
     def insert_animal(self):
@@ -43,30 +43,23 @@ class zoo():
 
     def put_animal_in_gehege(self, tier, gesamt_gehege):
         '''vergleicht die durchnittliche Größe eines ausgewachsenen Tieres dieser Gattung mit den Größenbedingungen
-        der Gehege und sortiert die Tiere in das richtige Gehege ein'''
+        der Gehege und sortiert das Tier in das richtige Gehege ein'''
         if tier.name in average_animal_size_weight:
-            if tier >= gesamt_gehege[0]:
-                if tier.size <= gesamt_gehege[0].capacity:
-                    gesamt_gehege[0].capacity -= tier.size
-                    gesamt_gehege[0].animals.append(tier)
-                else:
-                    print('im Großtiergehege ist nicht mehr genug Platz')
-            elif tier >= gesamt_gehege[1]:
-                if tier.size <= gesamt_gehege[1].capacity:
-                    gesamt_gehege[1].capacity -= tier.size
-                    gesamt_gehege[1].animals.append(tier)
-                else:
-                    print('im Mitteltiergehege ist nicht mehr genug Platz')
-            else:
-                if tier.size <= gesamt_gehege[2].capacity:
-                    gesamt_gehege[2].capacity -= tier.size
-                    gesamt_gehege[2].animals.append(tier)
-                else:
-                    print('im Kleintiergehege ist nicht mehr genug Platz')
+            for nr_gehege in range(len(gesamt_gehege)):
+                if tier >= gesamt_gehege[nr_gehege]:
+                    if tier.size <= gesamt_gehege[nr_gehege].capacity:
+                        gesamt_gehege[nr_gehege].capacity -= tier.size
+                        gesamt_gehege[nr_gehege].animals.append(tier)
+                    else:
+                        print(f'es ist nicht genügend Platz im {gesamt_gehege[nr_gehege].name}')
+                    break
+        else:
+            print('kann keinem Gehege zugeteilt werden')
 
         print(gesamt_gehege[0].__dict__)
         print(gesamt_gehege[1].__dict__)
         print(gesamt_gehege[2].__dict__)
+
 # ----------------------------------------------------------------------------------------------------------------------
 main_zoo        = zoo()
 main_zoo.insert_animal()

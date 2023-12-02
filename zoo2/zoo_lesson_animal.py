@@ -23,10 +23,10 @@ class Animal:
         ''' Global aufgerufen; erhält übereinstimmende Merkmalpunkte von count_characteristic_points für jedes Tier
              und setzt Diese in eine Liste'''
         for criteria_list in criteria_list_list:
-            points =    self.count_characteristc_points(criteria_list)
+            points =    self.count_characteristic_points(criteria_list)
             self.criteria_points.append(points)
 
-    def count_characteristc_points(self,criteria_list):
+    def count_characteristic_points(self, criteria_list):
         ''' Aufgerufen durch set-characteristic-points; zählt Übereinstimmungen der eingetragenen Merkmalen mit den
         Kriterienlisten und gibt diese zurück'''
         criteria_points =   0
@@ -68,8 +68,8 @@ class Animal:
             self.stadium = 'unbekannt'
 # ----------------------------------------------------------------------------------------------------------------------
     def __ge__(self, other):
-        average_size = average_animal_size_weight[self.name]
-        return average_size[0] >= other.condition
+        average_size_weight = average_animal_size_weight[self.name]
+        return average_size_weight[0] >= other.condition
 
     def __repr__(self):
         return self.name + ' ' + self.stadium
