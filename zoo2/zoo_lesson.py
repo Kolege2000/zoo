@@ -4,6 +4,8 @@ from zoo_lesson_lists import *
 
 class zoo():
     def __init__(self):
+
+
         self.tiere              =   []
         self.tier_idx           =   0
         self.anzahl_der_tiere   =   None
